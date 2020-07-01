@@ -5183,19 +5183,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a_hem\\.nuget\\packages\\": {}
+    "C:\\Users\\iashe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a_hem\\Desktop\\TransportationSystem\\Transportation-System\\Transportation System\\Transportation System.csproj",
+      "projectUniqueName": "F:\\Iti\\31- MVC\\New folder\\Transportation System\\Transportation System\\Transportation System.csproj",
       "projectName": "Transportation System",
-      "projectPath": "C:\\Users\\a_hem\\Desktop\\TransportationSystem\\Transportation-System\\Transportation System\\Transportation System.csproj",
-      "packagesPath": "C:\\Users\\a_hem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a_hem\\Desktop\\TransportationSystem\\Transportation-System\\Transportation System\\obj\\",
+      "projectPath": "F:\\Iti\\31- MVC\\New folder\\Transportation System\\Transportation System\\Transportation System.csproj",
+      "packagesPath": "C:\\Users\\iashe\\.nuget\\packages\\",
+      "outputPath": "F:\\Iti\\31- MVC\\New folder\\Transportation System\\Transportation System\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\a_hem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\iashe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5258,6 +5258,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5266,7 +5272,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
