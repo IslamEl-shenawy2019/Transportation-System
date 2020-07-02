@@ -7,7 +7,7 @@ namespace Transportation_System.Core.Domain
 {
     public enum VehicleType
     {
-        TokTok,Taxi
+        TokTok,bus,Taxi
     }
 
     public class Vehicle
