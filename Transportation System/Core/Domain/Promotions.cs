@@ -8,5 +8,6 @@ namespace Transportation_System.Core.Domain
     public class Promotions
     {
         public int Id { get; set; }
+        public string Promotion_Name { get; set; }
     }
 }
