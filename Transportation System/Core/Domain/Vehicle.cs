@@ -8,5 +8,6 @@ namespace Transportation_System.Core.Domain
     public class Vehicle
     {
         public int Id { get; set; }
+        public string VehicleName { get; set; }
     }
 }
