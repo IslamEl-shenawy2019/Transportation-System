@@ -8,6 +8,7 @@ namespace Transportation_System.Core.Domain
     public class Tickets
     {
         public int Id { get; set; }
-        public DateTime BookingDate{ get; set; }
+        public DateTime Booking{ get; set; }
+
     }
 }
