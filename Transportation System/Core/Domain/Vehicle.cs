@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 
 namespace Transportation_System.Core.Domain
 {
+    public enum VehicleType
+    {
+        TokTok
+    }
+
     public class Vehicle
     {
         public int Id { get; set; }
