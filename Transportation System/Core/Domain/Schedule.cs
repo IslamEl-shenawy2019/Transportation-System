@@ -13,6 +13,12 @@ namespace Transportation_System.Core.Domain
         public DateTime DepartureTime { get; set; }
         public string Startpoint { get; set; }
         public string EndPoint { get; set; }
+        public float InitialPrice { get; set; }
+        public float FinalPrice {
+            get { return FinalPrice; }
+            private set {
+                value = InitialPrice + Vehicle.Price;
+            } }
         public string Route { get; set; }
         public TimeSpan ExpectedTime { get; set; }
         public virtual List<Tickets> Tickets { get; set; }

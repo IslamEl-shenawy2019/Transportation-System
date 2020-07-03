@@ -22,5 +22,6 @@ namespace Transportation_System.Core.Domain
         public int NumOfSeats { get; set; }
         public virtual List<DriverVehicle> DriverVehicle { get; set; }
         public virtual List<Schedule> Schedules { get; set; }
+        public float Price { get; set; }
     }
 }
