@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace Transportation_System.Core.Domain
 {
-    public class Passenger
+    public class Passenger:User
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Telephone { get; set; }
+        public virtual List<Promotions> Promotions { get; set; }
+        public virtual List<Tickets> Tickets { get; set; }
     }
 }

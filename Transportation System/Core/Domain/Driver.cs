@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace Transportation_System.Core.Domain
 {
-    public class Driver
+    public class Driver:User
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Telephone { get; set; }
-
+        public VehicleType TransportationType { get; set; }
+        public virtual List<Schedule> Schedules { get; set; }
+        public virtual List<DriverVehicle> DriverVehicle { get; set; }
     }
 }
