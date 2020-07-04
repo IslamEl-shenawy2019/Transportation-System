@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Transportation_System.Data;
 
 namespace Transportation_System.Migrations
 {
     [DbContext(typeof(TransportContext))]
-    partial class TransportContextModelSnapshot : ModelSnapshot
+    [Migration("20200704143142_AnyChanges")]
+    partial class AnyChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

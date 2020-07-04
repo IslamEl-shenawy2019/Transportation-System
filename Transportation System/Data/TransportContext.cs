@@ -10,7 +10,7 @@ using Transportation_System.Persistence.EntityConfiguration;
 
 namespace Transportation_System.Data
 {
-    public class TransportContext: IdentityDbContext
+    public class TransportContext: IdentityDbContext<User,IdentityRole,string>
     {
         public TransportContext(DbContextOptions<TransportContext> options)
             : base(options)

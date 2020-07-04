@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Transportation_System.Data;
 
 namespace Transportation_System.Migrations
 {
     [DbContext(typeof(TransportContext))]
-    partial class TransportContextModelSnapshot : ModelSnapshot
+    [Migration("20200704161713_TestUserTable")]
+    partial class TestUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -178,12 +180,15 @@ namespace Transportation_System.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Passenger_Id")
+                    b.Property<string>("PassengerId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Passenger_Id")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Passenger_Id");
+                    b.HasIndex("PassengerId");
 
                     b.ToTable("Promotions");
                 });
@@ -204,8 +209,11 @@ namespace Transportation_System.Migrations
                     b.Property<string>("Destination")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Driver_Id")
+                    b.Property<string>("DriverId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Driver_Id")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EndPoint")
                         .HasColumnType("nvarchar(max)");
@@ -225,14 +233,17 @@ namespace Transportation_System.Migrations
                     b.Property<string>("Startpoint")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("VehicleId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Vehicle_Id")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Driver_Id");
+                    b.HasIndex("DriverId");
 
-                    b.HasIndex("Vehicle_Id");
+                    b.HasIndex("VehicleId");
 
                     b.ToTable("Schedules");
                 });
@@ -247,17 +258,23 @@ namespace Transportation_System.Migrations
                     b.Property<DateTime>("BookingDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Passenger_Id")
+                    b.Property<string>("PassengerId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Passenger_Id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ScheduleId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Schedule_Id")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Passenger_Id");
+                    b.HasIndex("PassengerId");
 
-                    b.HasIndex("Schedule_Id");
+                    b.HasIndex("ScheduleId");
 
                     b.ToTable("Tickets");
                 });
@@ -456,33 +473,29 @@ namespace Transportation_System.Migrations
                 {
                     b.HasOne("Transportation_System.Core.Domain.Passenger", "Passenger")
                         .WithMany("Promotions")
-                        .HasForeignKey("Passenger_Id");
+                        .HasForeignKey("PassengerId");
                 });
 
             modelBuilder.Entity("Transportation_System.Core.Domain.Schedule", b =>
                 {
                     b.HasOne("Transportation_System.Core.Domain.Driver", "Driver")
                         .WithMany("Schedules")
-                        .HasForeignKey("Driver_Id");
+                        .HasForeignKey("DriverId");
 
                     b.HasOne("Transportation_System.Core.Domain.Vehicle", "Vehicle")
                         .WithMany("Schedules")
-                        .HasForeignKey("Vehicle_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("VehicleId");
                 });
 
             modelBuilder.Entity("Transportation_System.Core.Domain.Tickets", b =>
                 {
                     b.HasOne("Transportation_System.Core.Domain.Passenger", "Passenger")
                         .WithMany("Tickets")
-                        .HasForeignKey("Passenger_Id");
+                        .HasForeignKey("PassengerId");
 
                     b.HasOne("Transportation_System.Core.Domain.Schedule", "Schedule")
                         .WithMany("Tickets")
-                        .HasForeignKey("Schedule_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ScheduleId");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,10 +14,11 @@ namespace Transportation_System.Core.Domain
         public string Startpoint { get; set; }
         public string EndPoint { get; set; }
         public float InitialPrice { get; set; }
+        float finalPrice;
         public float FinalPrice {
-            get { return FinalPrice; }
+            get { return finalPrice; }
             private set {
-                value = InitialPrice + Vehicle.Price;
+                finalPrice = InitialPrice + Vehicle.Price;
             } }
         public string Route { get; set; }
         public TimeSpan ExpectedTime { get; set; }

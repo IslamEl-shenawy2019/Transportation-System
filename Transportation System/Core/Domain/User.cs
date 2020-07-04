@@ -11,6 +11,14 @@ namespace Transportation_System.Core.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
-
+        TimeSpan age;
+        public TimeSpan Age {
+            get
+            {
+                return age;
+            }
+            set {
+                age = DateTime.Now - BirthDate;
+            } }
     }
 }
