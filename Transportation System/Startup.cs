@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Transportation_System.Core.Domain;
 using Transportation_System.Data;
-
+using AutoMapper;
 namespace Transportation_System
 {
     public class Startup
@@ -29,6 +29,7 @@ namespace Transportation_System
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerDocument();
             services.AddDbContext<TransportContext>(options =>
                 options.UseSqlServer(

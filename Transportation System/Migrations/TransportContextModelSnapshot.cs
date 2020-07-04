@@ -270,9 +270,6 @@ namespace Transportation_System.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("Age")
-                        .HasColumnType("time");
-
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
